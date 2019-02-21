@@ -8,7 +8,7 @@ const Supreme = styled.h3`
   border: 2px ${props => props.theme.oj};
   border-radius: 10px;
   margin: 0;
-  font-size: 4rem;
+  font-size: 3rem;
 `;
 
 export default Supreme;
