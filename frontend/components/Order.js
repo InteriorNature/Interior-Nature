@@ -53,7 +53,8 @@ class Order extends React.Component {
               </p>
               <p>
                 <span>Date</span>
-                <span>{format(parseISO(order.createdAt), 'MMMM d, YYYY h:mm a')}</span>
+                <span>{format(parseISO(order.createdAt), 'MMMM d, YYYY h:mm a', 
+                  { awareOfUnicodeTokens: true })}</span>
               </p>
               <p>
                 <span>Order Total</span>
