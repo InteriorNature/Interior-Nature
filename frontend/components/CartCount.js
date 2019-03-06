@@ -40,7 +40,8 @@ const Dot = styled.div`
   font-feature-settings: 'tnum';
   font-variant-numeric: tabular-nums;
 `;
-//last 2 lines in dot command equal size despite small or large number - must adjust to sizes not relative to font style
+//last 2 lines in dot function direct size despite small or large number 
+//must adjust to sizes, not relative to font style 
 const CartCount = ({ count }) => (
   <AnimationStyles>
     <TransitionGroup>

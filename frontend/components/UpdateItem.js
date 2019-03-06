@@ -4,7 +4,7 @@ import gql from 'graphql-tag';
 import Router from 'next/router';
 import Form from './styles/Form';
 import formatMoney from '../lib/formatMoney';
-import Error from './ErrorMessage';
+import DisplayError from './ErrorMessage';
 
 const SINGLE_ITEM_QUERY = gql`
   query SINGLE_ITEM_QUERY($id: ID!) {
@@ -77,7 +77,7 @@ class UpdateItem extends Component {
         {(updateItem, { loading, error }) => (
           <Form
             onSubmit={e => this.updateItem(e, updateItem)}>
-            <Error error={error} />
+            <DisplayError error={error} />
             <fieldset disabled={loading} aria-busy={loading}>
               <label htmlFor="title">
                 Title
@@ -116,7 +116,8 @@ class UpdateItem extends Component {
                   onChange={this.handleChange}
                 />
               </label>
-              <button type="submit">Update</button>
+              <button type="submit" disabled>Update</button>
+              <p>You do not have permission. Update button is disabled.</p>
             </fieldset>
           </Form>
         )}

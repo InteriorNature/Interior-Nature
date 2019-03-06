@@ -12,8 +12,10 @@ import calcTotalPrice from '../lib/calcTotalPrice';
 import formatMoney from '../lib/formatMoney';
 import TakeMyMoney from './TakeMyMoney';
 
-/*grab data from local store directly from apollo
-tag the cartOpen property with this client side directive*/
+/*grab data from local store (@client) directly from apollo
+- tag the cartOpen property with this client side directive
+- values are initialized in withData.js where we create
+the Apollo Client*/
 const LOCAL_STATE_QUERY = gql`
   query {
     cartOpen @client

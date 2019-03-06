@@ -3,8 +3,10 @@ import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 import styled from 'styled-components';
 import Item from './Item';
+import ItemNU from './ItemNU';
 import Pagination from './Pagination';
 import { perPage } from '../config';
+import User from './User';
 
 const ALL_ITEMS_QUERY = gql`
   query ALL_ITEMS_QUERY($skip: Int = 0, $first: Int = ${perPage}) {
@@ -43,11 +45,24 @@ class Items extends Component {
             skip: this.props.page * perPage - perPage,
           }}
         >
-          {({ data, error, loading }) => {
-            if (loading) return <p>Loading...</p>;
-            if (error) return <p>Error: {error.message}</p>;
+          {({ data : { items }, error : error1, loading : loading1 }) => {
+            if (loading1) return <p>Loading...</p>;
+            if (error1) return <p>Error: {error1.message}</p>;
             return (
-              <ItemsList>{data.items.map(item => <Item item={item} key={item.id} />)}</ItemsList>
+              <User>
+                {({ data: { me } }) => (
+                  <div>
+                  {me && (
+                    <ItemsList>{items.map(item => <Item item={item} key={item.id} />)}</ItemsList>
+                    )
+                  }
+                  {!me && (
+                    <ItemsList>{items.map(item => <ItemNU item={item} key={item.id} />)}</ItemsList>
+                    )
+                  }
+                  </div>
+                )}
+              </User>
             );
           }}
         </Query>

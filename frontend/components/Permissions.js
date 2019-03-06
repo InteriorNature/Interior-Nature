@@ -1,5 +1,5 @@
 import { Query, Mutation } from 'react-apollo';
-import Error from './ErrorMessage';
+import DisplayError from './ErrorMessage';
 import gql from 'graphql-tag';
 import Table from './styles/Table';
 import CartButton from './styles/CartButton';
@@ -48,8 +48,8 @@ const Permissions = props => (
   <Query query={ALL_USERS_QUERY}>
     {({ data, loading, error }) => (
       <div>
-        <Error error={error} />
-        {data.users && (
+        <DisplayError error={error} />
+        {!error && data.users && (
         <div>
           <h2>Manage Permissions</h2>
           <Table>

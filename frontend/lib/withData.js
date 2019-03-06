@@ -22,7 +22,7 @@ function createClient({ headers }) {
       resolvers: {
         Mutation: {
           toggleCart(_, variables, { cache }) {
-            // read the cartOpen value from the cache
+            // read the cartOpen value from the cache, query made in Cart.js
             const { cartOpen } = cache.readQuery({
               query: LOCAL_STATE_QUERY,
             });
