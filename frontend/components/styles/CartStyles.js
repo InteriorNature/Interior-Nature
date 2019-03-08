@@ -10,6 +10,9 @@ const CartStyles = styled.div`
   right: 0;
   width: 40%;
   min-width: 500px;
+  @media (max-width: 412px) { 
+      min-width: 350px;
+    }
   bottom: 0;
   transform: translateX(100%);
   transition: all 0.3s;
@@ -31,6 +34,9 @@ const CartStyles = styled.div`
     grid-template-columns: auto auto;
     align-items: center;
     font-size: 3rem;
+    @media (max-width: 412px) { 
+       font-size: 1.4rem;
+    }
     font-weight: 900;
     p {
       margin: 0;

@@ -11,7 +11,13 @@ const Title = styled.h3`
     border-radius: 20px;
     display: inline;
     line-height: 1.3;
-    font-size: 3rem;
+    font-size: 2.5rem;
+    @media (max-width: 768px) { 
+       font-size: 2.2rem;
+    }
+    @media (max-width: 412px) { 
+       font-size: 2rem;
+    }
     text-align: center;
     color: white;
     padding: 0 1rem;

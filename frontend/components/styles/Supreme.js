@@ -9,6 +9,9 @@ const Supreme = styled.h3`
   border-radius: 10px;
   margin: 0;
   font-size: 3rem;
+  @media (max-width: 412px) { 
+       font-size: 2rem;
+    }
 `;
 
 export default Supreme;
