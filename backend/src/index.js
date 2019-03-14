@@ -20,6 +20,7 @@ server.express.use((req, res, next) => {
     // put the userId onto the req for future requests to access
     req.userId = userId;
   }
+  //pass the request along the line whether updated or not
   next();
 });
 //Create a middleware that populates the user on each request

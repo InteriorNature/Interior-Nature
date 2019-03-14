@@ -27,7 +27,8 @@ const CURRENT_USER_QUERY = gql`
 
 // enables us to access the User info anywhere needed
 //the user props are now accessible thru the User component
-//we will fetch it the query thru many places
+//we will fetch it the query thru many places - render prop the apollo payload
+//generated thru the graphql query resolver
 const User = props => (
   <Query {...props} query={CURRENT_USER_QUERY}>
     {payload => props.children(payload)}

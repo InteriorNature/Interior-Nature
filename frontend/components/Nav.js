@@ -7,7 +7,8 @@ import CartCount from './CartCount';
 import Signout from './Signout';
 
 // use React fragment <></> to wrap group of return elements instead
-// of putting a div around each individual Link
+// of putting a div around each individual Link.
+//payload from apollo query is destructured into { data: { me } }
 const Nav = () => (
   <User>
     {({ data: { me } }) => (
