@@ -72,6 +72,12 @@ const Mutations = {
 async signup(parent, args, ctx, info) {
     // lowercase their email when submitted
     args.email = args.email.toLowerCase();
+    // check if there is a user with that email
+    const email = args.email;
+    const exists = await ctx.db.query.user({ where: { email } });
+    if (exists) {
+      throw new Error(`Existing user found for email ${email}`);
+    }
     // hash their password and add the Salt (length of 10, 
     // make unique hash algorithm to our app)
     const password = await bcrypt.hash(args.password, 10);
