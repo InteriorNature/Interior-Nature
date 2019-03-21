@@ -21,7 +21,7 @@ const makeANiceEmail = text => `
     <h2>Hello There!</h2>
     <p>${text}</p>
 
-    <p>😘, Kristin@InteriorNature</p>
+    <p>😘, Kristin@InteriorNature.com</p>
   </div>
 `;
 
