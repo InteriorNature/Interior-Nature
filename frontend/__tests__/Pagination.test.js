@@ -7,6 +7,8 @@ import { MockedProvider } from 'react-apollo/test-utils';
 
 //mock the router portion of Pagination render
 //basically, functions that do nothing - just so they are found
+//Need because there is a "prefetch" in the actual calls
+//use functions that do nothing
 Router.router = {
   push() {},
   prefetch() {},
@@ -51,8 +53,10 @@ describe('<Pagination/>', () => {
     );
     await wait();
     wrapper.update();
+    console.log(wrapper.debug()); 
     expect(wrapper.find('.totalPages').text()).toEqual('5');
     const pagination = wrapper.find('div[data-test="pagination"]');
+    console.log(pagination.debug());
     expect(toJSON(pagination)).toMatchSnapshot();
   });
 
