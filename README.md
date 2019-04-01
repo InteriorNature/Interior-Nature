@@ -10,6 +10,7 @@ This is my adapted version of a server-side rendering site developed while takin
 4) manipulate a cache directly - timing issues and good cases for refetching queries, creating optimistic responses, and what are good cases for cache invalidation
 5) the greater ease of SSR for rendering, routing and tooling (using Nextjs)
 6) how designing with higher-order components and stateless functions helps clarify the provider-consumer relationships AND 3 cheers for Apollo which made a seamless interface to all of the data
-7) using Downshift to customize managing state, user interactions and accessability in a dropdown component
-8) while I had used debouncing for scrolls before, this was a first using it in a search with a dbase query
-9) styled-components helps me invest my energy in React, rather than in Vue
+7) a re-usable pagination component
+8) Downshift to customize managing state, user interactions and accessability in a dropdown component
+9) how debouncing is for more than scrolls - this was a first using it in a search with a dbase query
+10) styled-components helps me invest my energy in React, rather than in Vue
